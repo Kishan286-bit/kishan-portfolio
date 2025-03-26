@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kishan Shivathaya</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .contact-section {
+            padding: 8rem 0 5rem;
+        }
+        
+        .contact-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 1rem;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-info-content {
+            flex: 1;
+        }
+        
+        .contact-info-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-info-content p, .contact-info-content a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-info-content a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .contact-social {
+            margin-top: 2rem;
+        }
+        
+        .contact-social-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-form-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .form-submit:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .availability-section {
+            margin-top: 4rem;
+            background-color: var(--light-bg);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .availability-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .availability-description {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .availability-status {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Kishan Shivathaya</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="case-study.html">Case Study</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h1 class="section-title">Get in Touch</h1>
+            
+            <div class="contact-intro">
+                <p>I'm always interested in discussing new projects, opportunities, and partnerships. Feel free to reach out using any of the methods below.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 class="contact-info-title">Contact Information</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Email</h4>
+                            <a href="mailto:kishanshivathaya@gmail.com">kishanshivathaya@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Phone</h4>
+                            <p>Available upon request</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Location</h4>
+                            <p>Available for remote work and on-site consulting</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3 class="contact-social-title">Connect with me</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/kishan-shivathaya/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:kishanshivathaya@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2 class="contact-form-title">Send Me a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Availability Section -->
+    <section class="availability-section">
+        <div class="container">
+            <h2 class="availability-title">Current Availability</h2>
+            <p class="availability-description">I'm currently available for consulting engagements, ERP implementation projects, and business analysis assignments. I specialize in helping organizations translate complex technology into simple, effective business solutions.</p>
+            <div class="availability-status">Available for New Projects</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Kishan Shivathaya</h3>
+                    <p>Business Analyst & ERP Implementation Specialist</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="case-study.html">Case Study</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/kishan-shivathaya/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:kishanshivathaya@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kishan Shivathaya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Contact form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, you would send the form data to a server
+                // For this demo, we'll just show an alert
+                alert('Thank you for your message! In a live website, this would be sent to Kishan Shivathaya.');
+                
+                // Reset the form
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
